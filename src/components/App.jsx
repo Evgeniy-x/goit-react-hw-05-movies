@@ -6,11 +6,11 @@ export const App = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
+        fontSize: 60,
+        color: '#010101',
       }}
     >
-      React homework template
+      Goit-react-hw-05-movies
     </div>
   );
 };
