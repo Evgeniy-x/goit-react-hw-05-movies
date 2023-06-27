@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 20px;
+  list-style: none;
+}
+
+.images {
+  width: 80px;
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+.container {
+  padding: 20px;
+}
+
+.button {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.section {
+  display: flex;
+}
+
+.image {
+  width: 200px;
+}
+
+.data {
+  padding: 0 20px;
+}
+
+.title {
+  margin: 0;
+}
+
+.overview {
+  margin: 0;
+}
+
+.genresList {
+  margin: 0;
+  padding-left: 15px;
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, useParams, Outlet, useLocation } from 'react-router-dom';
 import moviesAPI from '../servises/api';
+import css from './css/movie-details.module.css';
 
 const api = new moviesAPI();
 
@@ -17,27 +18,35 @@ const MovieDetails = () => {
   }, [movieId]);
   const { title, backdrop_path, vote_average, overview, genres } = movie;
   return (
-    <>
-      <Link to={backLinkLocationRef.current}>Go back</Link>
-      <h2>{title}</h2>
-      <img
-        src={
-          backdrop_path &&
-          `https://image.tmdb.org/t/p/original/${backdrop_path}`
-        }
-        alt={title}
-        style={{ width: '400px' }}
-      ></img>
-      <p>{`Popularit: ${vote_average}`}</p>
-      <p>
-        Overview <br />
-        {overview}
-      </p>
-      <ul>
-        {genres?.map(({ id, name }) => (
-          <li key={id}>{name}</li>
-        ))}
-      </ul>
+    <div className={css.container}>
+      <Link to={backLinkLocationRef.current} className={css.button}>
+        ~ Go back
+      </Link>
+      <div className={css.section}>
+        <img
+          src={
+            backdrop_path &&
+            `https://image.tmdb.org/t/p/original/${backdrop_path}`
+          }
+          alt={title}
+          className={css.image}
+        />
+        <div className={css.data}>
+          <h2 className={css.title}>{title}</h2>
+          <p className={css.rating}>{`Popularit: ${vote_average}`}</p>
+          <h3>Overview</h3>
+          <p className={css.overview}>{overview}</p>
+
+          <h3 className={css.genresTitle}>Genres</h3>
+          <ul className={css.genresList}>
+            {genres?.map(({ id, name }) => (
+              <li key={id} className={css.genresItem}>
+                {name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
       <ul>
         <li>
@@ -50,7 +59,7 @@ const MovieDetails = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
-    </>
+    </div>
   );
 };
 
