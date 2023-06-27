@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import moviesAPI from '../servises/api';
+
 // import { useSearchParams } from 'react-router-dom';
 
 const api = new moviesAPI();
@@ -14,7 +15,7 @@ const Home = () => {
     });
   }, []);
   return (
-    <div>
+    <ul>
       {list.map(({ id, title }) => (
         <li key={id}>
           <Link to={`movies/${id}`} state={{ from: location }}>
@@ -22,7 +23,7 @@ const Home = () => {
           </Link>
         </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

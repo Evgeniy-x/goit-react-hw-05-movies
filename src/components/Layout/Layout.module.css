@@ -1,0 +1,23 @@
+.header {
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+}
+
+.list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+}
+
+.item a {
+  color: black;
+}
+
+.item:hover a {
+  color: red;
+}
+
+.item a .active {
+  color: green;
+}
