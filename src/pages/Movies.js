@@ -20,7 +20,8 @@ const Movies = () => {
         setMovies(res.results);
       })
       .catch(erorr => console.log(erorr));
-  }, [searchParams]);
+    // eslint-disable-next-line
+  }, []);
 
   const onSubmitSearch = evt => {
     evt.preventDefault();
