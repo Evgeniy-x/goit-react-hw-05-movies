@@ -9,7 +9,7 @@ const options = {
   },
 };
 
-// const base_URL = 'https://api.themoviedb.org/3/';
+const base_URL = 'https://api.themoviedb.org/3/';
 
 export default class moviesAPI {
   fetchTopList() {

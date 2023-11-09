@@ -16,6 +16,11 @@ const MovieDetails = () => {
       setMovie(res);
     });
   }, [movieId]);
+  //  useEffect(() => {
+  //    api.fetchMovieDetails(movieId).then(res => {
+  //      setMovie(res);
+  //    });
+  //  }, [movieId]);
   const { title, backdrop_path, vote_average, overview, genres } = movie;
   return (
     <div className={css.container}>
